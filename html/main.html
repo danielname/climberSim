@@ -5,6 +5,36 @@
     <title>ClimberSim</title>
 </head>
 <body>
+<canvas id="c"></canvas>
+<script type="module">
+    import * as THREE from '../../build/three.module.js';
 
+    function main() {
+        // using THREE to render the canvas
+        const canvas = document.querySelector('#c');
+        const renderer = new THREE.WebGLRenderer({canvas});
+
+        // Camera construction
+        const fov = 75;
+        const aspect = 2;  // the canvas default
+        const near = 0.1;
+        const far = 5;
+        const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+
+        // Camera position update so items at (0,0,0) are visible.
+        camera.position.z = 2;
+
+        //Scene
+        const scene = new THREE.Scene();
+
+        // Box dimenstions
+        const boxWidth = 1;
+        const boxHeight = 1;
+        const boxDepth = 1;
+        const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+
+        //
+    }
+</script>
 </body>
 </html>
