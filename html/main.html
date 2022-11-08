@@ -33,7 +33,15 @@
         const boxDepth = 1;
         const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
 
-        //
+        // creating materials and objects
+        const material = new THREE.MeshBasicMaterial({color: 0x44aa88});
+        const cube = new THREE.Mesh(geometry, material);
+
+        // adding the object to the scene
+        scene.add(cube);
+
+        // render the scene by calling the rendering camera
+        renderer.render(scene, camera);
     }
 </script>
 </body>
