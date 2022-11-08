@@ -6,9 +6,15 @@
 </head>
 <body>
 <canvas id="c"></canvas>
+<script type="importmap">
+{
+  "imports": {
+    "THREE": "/js/three.js"
+  }
+}
+</script>
 <script type="module">
-    import * as THREE from '../../build/three.module.js';
-
+    import THREE from "THREE";
     function main() {
         // using THREE to render the canvas
         const canvas = document.querySelector('#c');
